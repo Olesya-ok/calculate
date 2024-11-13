@@ -33,10 +33,9 @@ calc.addEventListener('click', (event) => {
             break;
         default:
             if (['+', '*', '/'].includes(value)) {
-                // Предотвращаем ввод операторов на пустом экране или после очистки
+
                 if (calcInputScreen.innerText === "" || calcInputScreen.innerText === "0") return;
 
-                // Если на экране результат и вводится оператор, продолжаем вычисления
                 if (result) {
                     calcInputScreen.innerText = prevValue + value;
                     result = false;
@@ -44,7 +43,7 @@ calc.addEventListener('click', (event) => {
                     calcInputScreen.innerText += value;
                 }
             } else {
-                // Ввод чисел и точки
+
                 if (result) {
                     calcInputScreen.innerText = value !== "." ? value : "0.";
                     result = false;
@@ -109,7 +108,7 @@ calc.addEventListener('click', (event) => {
 // let equalBtn = document.querySelector(".calc-equal");
 //
 // equalBtn.addEventListener("click", function () {
-//     if (a && b && sign) { // Проверяем, что есть оба числа и знак операции
+//     if (a && b && sign) { 
 //         let result;
 //         switch (sign) {
 //             case "+":
@@ -126,10 +125,10 @@ calc.addEventListener('click', (event) => {
 //                 break;
 //         }
 //
-//         out.textContent = result; // Выводим результат на экран
-//         a = result.toString(); // Сохраняем результат в переменную a для дальнейших вычислений
-//         b = ""; // Очищаем b
-//         sign = ""; // Сбрасываем знак
+//         out.textContent = result;
+//         a = result.toString();
+//         b = "";
+//         sign = "";
 //     }
 // });
 
