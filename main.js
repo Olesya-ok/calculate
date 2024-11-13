@@ -32,20 +32,28 @@ calc.addEventListener('click', (event) => {
             }
             break;
         default:
-            if (result && ['+', '-', '*', '/'].includes(value)) {
-                // При добавлении новой операции после результата
-                calcInputScreen.innerText = prevValue + value;
-                result = false;
-            } else if (result) {
-                // Если результат есть, начинаем с нового значения
-                calcInputScreen.innerText = value !== "." ? value : "0.";
-                result = false;
-            } else {
-                // Проверка на 0 в начале
-                if (calcInputScreen.innerText === "0" && value !== ".") {
-                    calcInputScreen.innerText = value;
+            if (['+', '*', '/'].includes(value)) {
+                // Предотвращаем ввод операторов на пустом экране или после очистки
+                if (calcInputScreen.innerText === "" || calcInputScreen.innerText === "0") return;
+
+                // Если на экране результат и вводится оператор, продолжаем вычисления
+                if (result) {
+                    calcInputScreen.innerText = prevValue + value;
+                    result = false;
                 } else {
                     calcInputScreen.innerText += value;
+                }
+            } else {
+                // Ввод чисел и точки
+                if (result) {
+                    calcInputScreen.innerText = value !== "." ? value : "0.";
+                    result = false;
+                } else {
+                    if (calcInputScreen.innerText === "0" && value !== ".") {
+                        calcInputScreen.innerText = value;
+                    } else {
+                        calcInputScreen.innerText += value;
+                    }
                 }
             }
     }
