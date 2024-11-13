@@ -3,10 +3,10 @@
     width: 300px;
     height: 500px;
     border-radius: 20px;
-    background: darkblue;
+    background: #4b4bae;
     color: #00e5ff;
     padding: 18px;
-    box-shadow: 4px 4px 4px lightslategrey;
+    box-shadow: 0px 0px 18px #051b32;
 
 }
 
@@ -18,12 +18,12 @@
     align-items: end;
     background: #302a2a;
     border-radius: 10px;
+    font-size: 50px;
 }
 
 .calc-input-screen p {
     text-align: right;
     margin: 0;
-    font-size: 60px;
 }
 
 .button {
@@ -37,28 +37,33 @@
     width: 60px;
     height: 50px;
     background: dimgrey;
-    border-radius: 50%;
+    border-radius: 50px;
     text-align: center;
     cursor: pointer;
     user-select: none;
     font-size: 30px;
     padding-top: 8px;
+    box-shadow: 0px 6px #051b32;
+    transition: 0.1s linear;
 }
 
 .btn:hover {
     filter: brightness(120%);
+
 }
 
 .btn:active {
     filter: brightness(80%);
+    transform: translateY(4px);
+    box-shadow: 0px 0px 8px #051b32;
 }
 
 .calc-number {
-    background: #302a2a;
+    background: #4c4646;
 }
 
 .calc-div, .calc-mul, .calc-sub, .calc-add, .calc-equal {
-    background: #5a5ad5;
+    background: #5656dc;
 }
 
 .calc-number-zero{
