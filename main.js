@@ -108,7 +108,7 @@ calc.addEventListener('click', (event) => {
 // let equalBtn = document.querySelector(".calc-equal");
 //
 // equalBtn.addEventListener("click", function () {
-//     if (a && b && sign) { 
+//     if (a && b && sign) {
 //         let result;
 //         switch (sign) {
 //             case "+":
